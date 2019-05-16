@@ -1,3 +1,17 @@
+/*
+============================================
+; Title:  api-catalog.js
+; Author: David Tarvin
+; Date:   15 May 2019
+; Description: part of api-gateway
+;===========================================
+*/
+
+// display header at beginning of program
+const header = require('../Tarvin-header.js');
+console.log(header.display("David", "Tarvin", "API Gateway api-catalog.js"));
+console.log("");
+
 /**
  * API Routes
  */
