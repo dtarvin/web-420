@@ -8,9 +8,9 @@
 */
 
 // display header at beginning of program
-const header = require('/Tarvin-header.js');
-console.log(header.display("David", "Tarvin", "API Gateway config.js"));
-console.log("");
+// const header = require('/Tarvin-header.js');
+// console.log(header.display("David", "Tarvin", "API Gateway config.js"));
+// console.log("");
 
 
 var config = {};

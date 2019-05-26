@@ -7,11 +7,6 @@
 ;===========================================
 */
 
-// display header at beginning of program
-const header = require('../Tarvin-header.js');
-console.log(header.display("David", "Tarvin", "API Gateway user.js"));
-console.log("");
-
 /**
  * Fields username, password, and email
  */
@@ -22,6 +17,17 @@ var userSchema = new mongoose.Schema({
     password: String,
     email: String
 });
+
+// user.save is used to add a new user in our database
+module.exports.add = (user, callback) => {
+    user.save(callback);
+};
+
+module.exports.getById = (id, callback) => {
+    var query = {_id: id};
+    User.findById(query, callback);
+};
+
 module.exports = mongoose.model("User", userSchema);
 
 /**
