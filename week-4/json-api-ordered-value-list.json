@@ -1,0 +1,22 @@
+{
+    "heroes": [
+        {
+            "id": "1",
+            "first_name": "Jason",
+            "last_name": "Blood",
+            "alter_ego": "Etrigan the Demon"
+        },
+        {
+            "id": "2",
+            "first_name": "Jack",
+            "last_name": "Ryder",
+            "alter_ego": "The Creeper"
+        },
+        {
+            "id": 3,
+            "first_name": "Boston",
+            "last_name": "Brand",
+            "alter_ego": "Deadman"
+        }
+    ]
+}

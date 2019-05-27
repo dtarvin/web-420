@@ -1,0 +1,16 @@
+{
+    "Class": {
+        "_id": "1",
+        "name": "Physics",
+        "Enroll": {
+            "_id": 100,
+            "Student": {
+                "_id": 1000,
+                "first_name": "Jim",
+                "last_name": "Tyler",
+                "mi": "W"
+            },
+            "grade": 89
+        }
+    }
+}
