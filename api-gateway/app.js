@@ -7,28 +7,28 @@
 ;===========================================
 */
 
-const express = require('express');
-const path = require('path');
-const createError = require('http-errors');
-const cookieParser = require('cookie-parser');
-const logger = require('morgan');
-const mongoose = require('mongoose');
-const bodyParser = require('body-parser');
+var express = require('express');
+var path = require('path');
+var createError = require('http-errors');
+var cookieParser = require('cookie-parser');
+var logger = require('morgan');
+var mongoose = require('mongoose');
+var bodyParser = require('body-parser');
 mongoose.Promise = require('bluebird');
 
-const indexRouter = require('./routes/index');
-const apiCatalog = require('./routes/api-catalog');
+var indexRouter = require('./routes/index');
+var apiCatalog = require('./routes/api-catalog');
 
-const app = express();
+var app = express();
 
 /**
  * 
  Database connection
  */
 mongoose.connect('mongodb+srv://admin:admin@cluster0-jwmqn.mongodb.net/test?retryWrites=true', {
-  promiseLibrary:require('bluebird')
-}).then(() => console.log('connection successful'))
-.catch((err)=> console.error(err));
+  promiseLibrary: require('bluebird')
+}).then ( () => console.log('connection successful'))
+.catch( (err) => console.error(err));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -46,6 +46,11 @@ app.use('/api', apiCatalog);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
+  /**
+   * var err = new Error('Not Found');
+   * err.status = 404;
+   * next(err);
+  */
 });
 
 // error handler

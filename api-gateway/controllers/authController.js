@@ -3,6 +3,7 @@
 ; Title:  authController.js
 ; Author: David Tarvin
 ; Date:   15 May 2019
+: Last Update: 08 June 2019
 ; Description: part of api-gateway
 ;===========================================
 */
@@ -15,7 +16,6 @@ var config = require('../config');
 // Register a new user on POST
 exports.user_register = function(req, res) {
     
-    console.log('David - ' + req.body.username);
     var hashedPassword = bcrypt.hashSync(req.body.password, 8);
 
     var newUser = new User({
@@ -25,14 +25,14 @@ exports.user_register = function(req, res) {
     });
 
     User.add(newUser, (err, user) => {
-        if (err) return res.status(500).send('There was a problem registering the user.');
+        if (err) 
+            return res.status(500).send('There was a problem registering the user.');
 
         var token = jwt.sign({ id: user._id}, config.web.secret, {
             expiresIn: 86400 // 24 hours
         });
 
         res.status(200).send({ auth: true, token: token });
-
     });
 };
 
@@ -41,7 +41,7 @@ exports.user_token = function(req, res) {
     
     var token = req.headers['x-access-token'];
 
-    if (!token) return res.status(401).send({auth: false, message: 'No token provided.'});
+    if (!token) return res.status(401).send({ auth: false, message: 'No token provided'});
 
     jwt.verify(token, config.web.secret, function(err, decoded) {
         if (err) return res.status(500).send({auth: false, message: 'Failed to authenticate token.'});
@@ -58,6 +58,7 @@ exports.user_token = function(req, res) {
 
 // Login as an existing user on POST
 exports.user_login = function(req, res) {
+    
     User.getOne(req.body.email, function(err, user) {
         if (err) return res.status(500).send('Error on server.');
         if (!user) return res.status(404).send('No user found.');
