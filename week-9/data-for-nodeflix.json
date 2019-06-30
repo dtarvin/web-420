@@ -1,0 +1,59 @@
+{
+    "account_list": [
+        {
+            "_id": 1,
+            "account_name": "mayfield",
+            "service_level": "basic",
+            "total_sessions": 1,
+            "sessions": [
+                {
+                    "session_number": 1,
+                    "users": [
+                        {
+                            "name": "Sarah",
+                            "sleep_timer": 30,
+                            "recommendation_lists": [
+                                {
+                                    "list_number": 1,
+                                    "show": "NCIS",
+                                    "recommendations": [
+                                        {
+                                            "recommend_number": 1,
+                                            "show": "Criminal Minds"
+                                        },
+                                        {
+                                            "recommend_number": 2,
+                                            "show": "CSI"
+                                        },
+                                        {
+                                            "recommend_number": 3,
+                                            "show": "Law and Order"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "list_number": 2,
+                                    "show": "Flash",
+                                    "recommendations": [
+                                        {
+                                            "recommend_number": 1,
+                                            "show": "Arrow"
+                                        },
+                                        {
+                                            "recommend_number": 2,
+                                            "show": "Supergirl"
+                                        },
+                                        {
+                                            "recommend_number": 3,
+                                            "show": "Black Lightning"
+                                        }                  
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
